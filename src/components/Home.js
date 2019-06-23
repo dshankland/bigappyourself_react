@@ -1,12 +1,12 @@
 import React from 'react';
-import LoginComponent from './LoginComponent';
+import LoginFormContainer from '../containers/LoginFormContainer';
 
 const Home = (props) => {
 
   return (
     <div>
       <h1>You made a great choice coming here!</h1>
-      <LoginComponent/>
+      <LoginFormContainer/>
     </div>
   )
 
