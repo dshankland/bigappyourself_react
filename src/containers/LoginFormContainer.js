@@ -20,7 +20,7 @@ class LoginFormContainer extends Component {
   componentDidMount(){
     const request = new Request();
 
-    request.get('/api/users')
+    request.get('/users')
     .then((data) => {
       this.setState({users: data._embedded.users})
       })
@@ -43,12 +43,12 @@ class LoginFormContainer extends Component {
       }
     }
     if (passwordMatch) {
-      console.log("We have a user and password match");
+      // console.log("We have a user and password match");
       localStorage.setItem('foundUser', JSON.stringify(this.state.users[foundUser]));
       // this.context.router.push({pathname: '/compliment', state: {user: this.state.users[foundUser]}});
       window.location = "/compliment";
     } else {
-      console.log("Bad user or password");
+      // console.log("Bad user or password");
       this.setState({loginmessage: "Bad user or password, please try again, or register.."})
     }
   }
@@ -68,12 +68,15 @@ class LoginFormContainer extends Component {
 
     return (
         <div>
+        <p>Please login to be showered with compliments</p>
         <form onSubmit={this.handleLogin}>
           <input type="text" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} />
           <input type="password" name="password" onChange={this.handlePassword} value={this.state.password}/>
           <button type="submit">Login</button>
         </form>
         {this.state.loginmessage}
+        <hr/>
+        <a href="/register">Click here to register</a>
         </div>
       )
   }
