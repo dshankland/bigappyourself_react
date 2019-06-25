@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Request from '../helpers/request';
 import Logout from '../components/Logout';
+import '../compliment_container.css';
 
 class ComplimentContainer extends Component {
   constructor(props){
@@ -51,18 +52,27 @@ class ComplimentContainer extends Component {
 
   render(){
     return (
-        <div>
-        <h1>Hi {this.state.user.firstName}!</h1>
-        <h2>{this.state.user.compliment}</h2>
-        <button onClick={this.handleBigAppButtonClick}><h1>BigAppYourself!</h1></button>
-        <div>
-          <form>
-            <h3>Big App a friend!</h3>
-              <input type='text' placeholder="Enter their Twitter handle here" onChange={this.handleFriend} value={this.state.friendsTwitter}/>
-              <button onClick={this.handleTweetYourFriend}>Tweet!</button>
-          </form>
+        <div className="compliment_container">
+        <div className="logout_container">
+          <Logout/>
         </div>
-        <Logout/>
+          <div className="greeting">
+            <h1>Hi {this.state.user.firstName}!</h1>
+          </div>
+          <div className="compliment">
+            <h2>{this.state.user.compliment}</h2>
+          </div>
+          <div className="praise_button">
+            <button className="praise_me" onClick={this.handleBigAppButtonClick}><img src="../../favicon.ico"/><h2>Click for praise</h2></button>
+          </div>
+
+          <form>
+            <label for="twitter_handle"><h3>Enjoy our praise? Why not Big App a friend and share the love? Just enter your pal's Twitter handle below, and we'll compliment them for you.</h3></label>
+            <input type='text' name="twitter_handle" placeholder="Enter a pal's Twitter handle here" onChange={this.handleFriend} value={this.state.friendsTwitter}/>
+            <button className="tweet" onClick={this.handleTweetYourFriend}><p>Tweet!</p></button>
+          </form>
+
+
         </div>
       )
   }
