@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Request from '../helpers/request';
+import '../registration.css';
 
 class UserRegistrationContainer extends Component {
   constructor(props){
