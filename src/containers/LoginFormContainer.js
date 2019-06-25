@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Request from '../helpers/request';
+import '../App.css'
 
 class LoginFormContainer extends Component {
   constructor(props){
@@ -68,11 +69,13 @@ class LoginFormContainer extends Component {
     return (
         <div>
         <p>Please login to be showered with compliments</p>
+        <div class="loginForm">
         <form onSubmit={this.handleLogin}>
           <input type="text" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} />
           <input type="password" name="password" onChange={this.handlePassword} value={this.state.password}/>
           <button type="submit">Login</button>
         </form>
+        </div>
         {this.state.loginmessage}
         <hr/>
         <a href="/register">Click here to register</a>
