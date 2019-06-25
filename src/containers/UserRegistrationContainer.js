@@ -46,30 +46,39 @@ class UserRegistrationContainer extends Component {
     // }
 
     // need to handle registration and pass on to preferences screen
-    const selectedPreferences = [...event.target.preferences.options].filter((option) => {
-      return option.selected
+    // const selectedPreferences = [...event.target.preferences.options].filter((option) => {
+    //   return option.selected
+    // }).map((option) => {
+    //   return option.value
+    // });
+    // console.log("Multi",selectedPreferences);
+    // this.setState({preferences: selectedPreferences});
+
+    console.log("HELLO", event.target.checkbox_pref);
+    const checkboxPreferences = [...event.target.checkbox_pref].filter((option) => {
+      return option.checked
     }).map((option) => {
       return option.value
     });
-    console.log(selectedPreferences);
-    this.setState({preferences: selectedPreferences});
+    console.log("Checkbox",checkboxPreferences);
+    this.setState({preferences: checkboxPreferences});
 
     const newUser = {
       "firstName": event.target.firstName.value,
       "lastName": event.target.lastName.value,
       "email": event.target.email.value,
       "password": event.target.password.value,
-      "preferences": selectedPreferences,
+      "preferences": checkboxPreferences,
       "twitter": event.target.twitter.value,
       "phone": event.target.phone.value,
       "compliment": this.state.compliment
     }
-    console.log(newUser);
+    // console.log(newUser);
     // wait(10000);
     const request = new Request();
     request.post("/users", newUser)
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       // wait(10000);
       data.json().then((user) => {
         // console.log(user);
@@ -110,8 +119,12 @@ class UserRegistrationContainer extends Component {
       return null
     }
 
-    const prefOptions = this.state.keywords.map((keyword, index) => {
-      return <option key={index} value={keyword}>{keyword}</option>
+    // const prefOptions = this.state.keywords.map((keyword, index) => {
+    //   return <option key={index} value={keyword}>{keyword}</option>
+    // })
+
+    const prefOptionsCheckbox = this.state.keywords.map((keyword, index) => {
+      return <label key={index}>{keyword}<input type="checkbox" name="checkbox_pref" key={index} value={keyword}/></label>
     })
 
     return (
@@ -143,10 +156,10 @@ class UserRegistrationContainer extends Component {
 
           </fieldset>
           <fieldset>
-            <legend>Compliment Preferences</legend>
-            <select multiple={true} name="preferences">
-              {prefOptions}
-            </select>
+            <legend>Compliment Preferences Checkboxes</legend>
+            <ul className="checkbox-grid">
+              {prefOptionsCheckbox}
+            </ul>
           </fieldset>
           <button type="submit">Register</button>
         </form>
