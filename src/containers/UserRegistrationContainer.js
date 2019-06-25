@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Request from '../helpers/request';
+import '../registration.css';
 
 class UserRegistrationContainer extends Component {
   constructor(props){
@@ -129,40 +130,52 @@ class UserRegistrationContainer extends Component {
 
     return (
         <div>
-        <form onSubmit={this.handleRegistration}>
-          <fieldset>
-            <legend>User Details</legend>
-            <label>First Name
-              <input type="text" id="firstName" placeholder="First Name" name="firstName" onChange={this.handleFirstName} value={this.state.firstName} />
-            </label>
-            <label>Last Name
-              <input type="text" id="lastName" placeholder="Last Name" name="lastName" onChange={this.handleLastName} value={this.state.lastName} />
-            </label>
-            <label>Email/Login
-              <input type="text" id="email" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} />
-            </label>
-            <label>Password
-              <input type="password" id="password" name="password" onChange={this.handlePassword} value={this.state.password}/>
-            </label>
-          </fieldset>
-          <fieldset>
-            <legend>Contact Details</legend>
-            <label>Twitter
+          <form className="user-details-form-div" onSubmit={this.handleRegistration}>
+            <div className="side-by-side-bit">
+            <div className="user-details-form">
+              <div className="first-name-last-name">
+                <legend className="reg-form-legend">Fill in this form please, let us get to know you better.</legend>
+                <label>First Name
+                  <input type="text" id="firstName" placeholder="First Name" name="firstName" onChange={this.handleFirstName} value={this.state.firstName} />
+                </label>
+                <label>Last Name
+                  <input type="text" id="lastName" placeholder="Last Name" name="lastName" onChange={this.handleLastName} value={this.state.lastName} />
+                </label>
+              </div>
+
+              <div className="email-div">
+                <label>Email/Login
+                  <input type="text" id="email" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} />
+                </label>
+              </div>
+
+              <div className="password-div">
+                <label>Password
+                  <input type="password" id="password" name="password" onChange={this.handlePassword} value={this.state.password}/>
+                </label>
+              </div>
+            </div>
+            {/*<div className="logo-div">*/}
+              {/*<img src="../../favicon.ico" alt="Big App Yourself" width="200" height="200" align="center" />*/}
+            {/*</div>*/}
+            </div>
+
+            <legend className="reg-form-legend">How do you want your compliments ?</legend>
+            <label>By tweet?
               <input type="text" id="twitter" placeholder="Twitter" name="twitter" onChange={this.handleTwitter} value={this.state.twitter} />
             </label>
-            <label>Mobile Phone
+            <label>By text?
               <input type="text" id="phone" placeholder="Mobile Phone" name="phone" onChange={this.handlePhone} value={this.state.phone} />
             </label>
 
-          </fieldset>
-          <fieldset>
-            <legend>Compliment Preferences Checkboxes</legend>
+            <legend className="reg-form-legend">Tick what you'd like to be complimented on</legend>
             <ul className="checkbox-grid">
               {prefOptionsCheckbox}
             </ul>
-          </fieldset>
-          <button type="submit">Register</button>
-        </form>
+            <div>
+            <button type="submit">Register</button>
+            </div>
+          </form>
         </div>
       )
   }
