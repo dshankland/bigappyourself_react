@@ -2,12 +2,12 @@ form{
   padding: 1em;
 }
 
-input{
+/* input{
   width:300px;
   padding: 12px;
   margin: 8px 0;
   box-sizing: border-box;
-}
+} */
 
 .loginForm{
   align-content: right;
