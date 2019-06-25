@@ -70,7 +70,7 @@ class LoginFormContainer extends Component {
 
     return (
         <div id="login">
-        <p>Please login to be showered with compliments</p>
+        <p>Please login to be showered with praise</p>
         <div id="container">
           <div className="loginForm">
             <form className="login" onSubmit={this.handleLogin}>
