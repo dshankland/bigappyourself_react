@@ -7,7 +7,7 @@ class ComplimentContainer extends Component {
     super(props);
     this.state = {
       user: null,
-      friendsTwitter: null
+      friendsTwitter: ""
     }
 
     this.handleBigAppButtonClick = this.handleBigAppButtonClick.bind(this);
@@ -41,7 +41,7 @@ class ComplimentContainer extends Component {
 
     event.preventDefault();
     const request = new Request();
-    if(this.state.friendsTwitter != null){
+    if(this.state.friendsTwitter !== ""){
     request.get('/users/tweet/'+ this.state.friendsTwitter)
     .then((data) => {
       window.location = '/compliment'

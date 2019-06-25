@@ -37,13 +37,13 @@ class UserRegistrationContainer extends Component {
   handleRegsistration(event){
     event.preventDefault();
 
-    function wait(ms){
-       var start = new Date().getTime();
-       var end = start;
-       while(end < start + ms) {
-         end = new Date().getTime();
-      }
-    }
+    // function wait(ms){
+    //    var start = new Date().getTime();
+    //    var end = start;
+    //    while(end < start + ms) {
+    //      end = new Date().getTime();
+    //   }
+    // }
 
     // need to handle registration and pass on to preferences screen
     const selectedPreferences = [...event.target.preferences.options].filter((option) => {
@@ -65,11 +65,18 @@ class UserRegistrationContainer extends Component {
       "compliment": this.state.compliment
     }
     console.log(newUser);
-    wait(10000);
+    // wait(10000);
     const request = new Request();
     request.post("/users", newUser)
-    .then(() => {
-      window.location = "/";
+    .then((data) => {
+      console.log(data);
+      // wait(10000);
+      data.json().then((user) => {
+        // console.log(user);
+        localStorage.setItem('foundUser', JSON.stringify(user));
+        window.location = "/compliment";
+      })
+      // window.location = "/";
     })
   }
 
