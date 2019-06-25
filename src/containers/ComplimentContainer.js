@@ -63,12 +63,12 @@ class ComplimentContainer extends Component {
             <h2>{this.state.user.compliment}</h2>
           </div>
           <div className="praise_button">
-            <button className="praise_me" onClick={this.handleBigAppButtonClick}><img src="../../favicon.ico"/><h2>Click for praise</h2></button>
+            <button className="praise_me" onClick={this.handleBigAppButtonClick}><img src="../../favicon.ico" alt="Big App Yourself"/><h2>Click for praise</h2></button>
           </div>
 
-          <form>
-            <label for="twitter_handle"><h3>Enjoy our praise? Why not Big App a friend and share the love? Just enter your pal's Twitter handle below, and we'll compliment them for you.</h3></label>
-            <input type='text' name="twitter_handle" placeholder="Enter a pal's Twitter handle here" onChange={this.handleFriend} value={this.state.friendsTwitter}/>
+          <form className="tweet-mate">
+            <label htmlFor="twitter_handle"><h3>Enjoy our praise? Why not Big App a friend and share the love? Just enter your pal's Twitter handle below, and we'll compliment them for you.</h3></label>
+            <input type='text' className="compliment-input" name="twitter_handle" placeholder="Enter a pal's Twitter handle here" onChange={this.handleFriend} value={this.state.friendsTwitter}/>
             <button className="tweet" onClick={this.handleTweetYourFriend}><p>Tweet!</p></button>
           </form>
 

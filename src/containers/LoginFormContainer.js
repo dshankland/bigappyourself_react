@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Request from '../helpers/request';
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
-
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
+// TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton
 import '../Login.css'
 
 class LoginFormContainer extends Component {
@@ -73,18 +73,18 @@ class LoginFormContainer extends Component {
         <p>Please login to be showered with compliments</p>
         <div id="container">
           <div className="loginForm">
-            <form onSubmit={this.handleLogin}>
+            <form className="login" onSubmit={this.handleLogin}>
               <div>
                 <div>
                   <label>Email</label>
                 </div>
-                <input type="text" placeholder="Enter email" name="email" onChange={this.handleEmail} value={this.state.email} />
+                <input type="text" className="login" placeholder="Enter email" name="email" onChange={this.handleEmail} value={this.state.email} />
               </div>
             <div>
               <div>
                 <label>Password</label>
               </div>
-                <input type="password" placeholder="Enter password" name="password" onChange={this.handlePassword} value={this.state.password}/>
+                <input type="password" className="login" placeholder="Enter password" name="password" onChange={this.handlePassword} value={this.state.password}/>
               </div>
               <button type="submit">Login</button>
             </form>

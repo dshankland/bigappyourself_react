@@ -135,23 +135,23 @@ class UserRegistrationContainer extends Component {
             <div className="user-details-form">
               <div className="first-name-last-name">
                 <legend className="reg-form-legend">Fill in this form please, let us get to know you better.</legend>
-                <label>First Name
-                  <input type="text" id="firstName" placeholder="First Name" name="firstName" onChange={this.handleFirstName} value={this.state.firstName} />
+                <label className="reg-form-label">First Name
+                  <input type="text" className="reg-form-input" id="firstName" placeholder="First Name" name="firstName" onChange={this.handleFirstName} value={this.state.firstName} />
                 </label>
-                <label>Last Name
-                  <input type="text" id="lastName" placeholder="Last Name" name="lastName" onChange={this.handleLastName} value={this.state.lastName} />
+                <label className="reg-form-label">Last Name
+                  <input type="text" className="reg-form-input" id="lastName" placeholder="Last Name" name="lastName" onChange={this.handleLastName} value={this.state.lastName} />
                 </label>
               </div>
 
               <div className="email-div">
-                <label>Email/Login
-                  <input type="text" id="email" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} />
+                <label className="reg-form-label">Email/Login
+                  <input type="text" className="reg-form-input" id="email" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} />
                 </label>
               </div>
 
               <div className="password-div">
-                <label>Password
-                  <input type="password" id="password" name="password" onChange={this.handlePassword} value={this.state.password}/>
+                <label className="reg-form-label">Password
+                  <input type="password" className="reg-form-input" id="password" name="password" onChange={this.handlePassword} value={this.state.password}/>
                 </label>
               </div>
             </div>
@@ -161,11 +161,11 @@ class UserRegistrationContainer extends Component {
             </div>
 
             <legend className="reg-form-legend">How do you want your compliments ?</legend>
-            <label>By tweet?
-              <input type="text" id="twitter" placeholder="Twitter" name="twitter" onChange={this.handleTwitter} value={this.state.twitter} />
+            <label className="reg-form-label">By tweet?
+              <input type="text" className="reg-form-input" id="twitter" placeholder="Twitter" name="twitter" onChange={this.handleTwitter} value={this.state.twitter} />
             </label>
-            <label>By text?
-              <input type="text" id="phone" placeholder="Mobile Phone" name="phone" onChange={this.handlePhone} value={this.state.phone} />
+            <label className="reg-form-label">By text?
+              <input type="text" className="reg-form-input" id="phone" placeholder="Mobile Phone" name="phone" onChange={this.handlePhone} value={this.state.phone} />
             </label>
 
             <legend className="reg-form-legend">Tick what you'd like to be complimented on</legend>

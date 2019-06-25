@@ -1,5 +1,5 @@
 /* Style inputs, select elements and textareas */
-input[type=text], input[type=password], select, textarea{
+input.reg-form-input[type=text], input.reg-form-input[type=password], select, textarea.reg-form-input{
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -10,7 +10,7 @@ input[type=text], input[type=password], select, textarea{
 }
 
 /* Style the label to display next to the inputs */
-label {
+label.reg-form-label, label.checkbox-grid {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
