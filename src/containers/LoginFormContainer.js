@@ -69,7 +69,7 @@ class LoginFormContainer extends Component {
     return (
         <div>
         <p>Please login to be showered with compliments</p>
-        <div class="loginForm">
+        <div className="loginForm">
         <form onSubmit={this.handleLogin}>
           <input type="text" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} />
           <input type="password" name="password" onChange={this.handlePassword} value={this.state.password}/>

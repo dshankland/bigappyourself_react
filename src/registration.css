@@ -1,0 +1,92 @@
+body{
+ background:linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),url('/favicon.ico') no-repeat center;
+ background-size: cover;
+}
+
+/* Style inputs, select elements and textareas */
+input[type=text], input[type=password], select, textarea{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 1em;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+button[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  /* border: solid 1px #000; */
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  font-size: 1em;
+}
+
+.side-byside-bit {
+}
+
+.user-details-form {
+  float: left;
+  overflow: hidden;
+}
+
+.logo-div {
+  float: right;
+  display: center;
+}
+
+.reg-form-legend {
+  clear: both;
+}
+
+.checkbox-grid {
+  display: flex;
+  /* grid-template-areas: "left right"; */
+  /* width: 400px; */
+  display:inline-block;
+  align-items: center;
+  width:33.3333%;
+  padding: 10px;
+}
+
+.checkbox-grid ul, .checkbox-grid li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+input[type=checkbox] {
+  grid-area: right;
+}
+
+label {
+  grid-area: left;
+}
+
+.reg-form-legend {
+  font-size: 1.5em;
+}
+
+.user-details-form-div {
+  background: #FFF;
+  background:linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url('/favicon.ico') no-repeat center;
+  padding: 3px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
