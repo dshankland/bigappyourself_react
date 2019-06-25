@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Request from '../helpers/request';
-import '../App.css'
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+
+import '../Login.css'
 
 class LoginFormContainer extends Component {
   constructor(props){
@@ -67,18 +69,37 @@ class LoginFormContainer extends Component {
     }
 
     return (
-        <div>
+        <div id="login">
         <p>Please login to be showered with compliments</p>
-        <div className="loginForm">
-        <form onSubmit={this.handleLogin}>
-          <input type="text" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} />
-          <input type="password" name="password" onChange={this.handlePassword} value={this.state.password}/>
-          <button type="submit">Login</button>
-        </form>
+        <div id="container">
+          <div className="loginForm">
+            <form onSubmit={this.handleLogin}>
+              <div>
+                <div>
+                  <label>Email</label>
+                </div>
+                <input type="text" placeholder="Enter email" name="email" onChange={this.handleEmail} value={this.state.email} />
+              </div>
+            <div>
+              <div>
+                <label>Password</label>
+              </div>
+                <input type="password" placeholder="Enter password" name="password" onChange={this.handlePassword} value={this.state.password}/>
+              </div>
+              <button type="submit">Login</button>
+            </form>
         </div>
-        {this.state.loginmessage}
-        <hr/>
-        <a href="/register">Click here to register</a>
+          {this.state.loginmessage}
+            <div>
+              <button><a href="/register">Click here to register</a></button>
+              </div>
+            <div id="twitterFeed">
+              <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="appSelf"
+              options={{height: 400}}/>
+            </div>
+          </div>
         </div>
       )
   }
