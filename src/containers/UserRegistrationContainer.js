@@ -125,7 +125,7 @@ class UserRegistrationContainer extends Component {
     // })
 
     const prefOptionsCheckbox = this.state.keywords.map((keyword, index) => {
-      return <label key={index}>{keyword}<input type="checkbox" name="checkbox_pref" key={index} value={keyword}/></label>
+      return <label className="checkbox-label" key={index}>{keyword}<input type="checkbox" className="checkbox" name="checkbox_pref" key={index} value={keyword} /></label>
     })
 
     return (
@@ -134,7 +134,7 @@ class UserRegistrationContainer extends Component {
             <div className="side-by-side-bit">
             <div className="user-details-form">
               <div className="first-name-last-name">
-                <legend className="reg-form-legend">Fill in this form please, let us get to know you better.</legend>
+                <legend className="reg-form-legend">Please fill in this form to let us get to know you better.</legend>
                 <label className="reg-form-label">First Name
                   <input type="text" className="reg-form-input" id="firstName" placeholder="First Name" name="firstName" onChange={this.handleFirstName} value={this.state.firstName} />
                 </label>
@@ -160,18 +160,18 @@ class UserRegistrationContainer extends Component {
             {/*</div>*/}
             </div>
 
-            <legend className="reg-form-legend">How do you want your compliments ?</legend>
+            <legend className="reg-form-legend">How would you like your compliments ?</legend>
             <label className="reg-form-label">By tweet?
-              <input type="text" className="reg-form-input" id="twitter" placeholder="Twitter" name="twitter" onChange={this.handleTwitter} value={this.state.twitter} />
+              <input type="text" className="reg-form-input" id="twitter" placeholder="Twitter handle" name="twitter" onChange={this.handleTwitter} value={this.state.twitter} />
             </label>
             <label className="reg-form-label">By text?
-              <input type="text" className="reg-form-input" id="phone" placeholder="Mobile Phone" name="phone" onChange={this.handlePhone} value={this.state.phone} />
+              <input type="text" className="reg-form-input" id="phone" placeholder="Mobile number" name="phone" onChange={this.handlePhone} value={this.state.phone} />
             </label>
 
-            <legend className="reg-form-legend">Tick what you'd like to be complimented on</legend>
-            <ul className="checkbox-grid">
+            <legend className="reg-form-legend">Please tick what you'd like to be complimented on</legend>
+            <div className="checkbox-grid">
               {prefOptionsCheckbox}
-            </ul>
+            </div>
             <div>
             <button type="submit">Register</button>
             </div>

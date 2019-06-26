@@ -48,9 +48,10 @@ button[type=submit] {
   display: flex;
   /* grid-template-areas: "left right"; */
   /* width: 400px; */
-  display:inline-block;
+  display:inline;
   align-items: center;
-  width:33.3333%;
+  min-width:640px;
+  min-height: 120px;
   padding: 10px;
 }
 
@@ -60,12 +61,16 @@ button[type=submit] {
     list-style:none;
 }
 
-input[type=checkbox] {
+input[type=checkbox].checkbox {
   grid-area: right;
+  margin: 6px;
 }
 
-label {
-  grid-area: left;
+label.checkbox-label {
+  margin: 10px;
+  padding: 0 0 0 0;
+  display: inline-block;
+  font-size: 1.2em;
 }
 
 .reg-form-legend {
@@ -73,7 +78,15 @@ label {
 }
 
 .user-details-form-div {
-  padding: 3px;
+  padding: 14px;
+  position: relative;
+  top: 20px;
+  margin: auto;
+  background-color: white;
+  max-width: 640px;
+  min-height: 690px;
+  border: solid 8px black;
+  border-radius: 60px;
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
