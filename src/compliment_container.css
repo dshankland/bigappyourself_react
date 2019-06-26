@@ -10,28 +10,31 @@
   margin: auto;
   background-color: yellow;
   max-width: 650px;
-  
+
   border: solid 8px black;
   border-radius: 60px;
   box-shadow: 10px 8px 8px #36454f ;
 }
 .greeting {
+  position: relative;
+  left: 40px;
   margin-left: 40px;
   max-width: 200px;
 }
+
 .logout_container{
   margin: 30px;
   position: relative;
   left: 490px;
-  top: 5px;
+  top: 10px;
   background-color: #4CAF5;
 }
 
 .praise_me {
   align-right: content;
   position: relative;
-  left: 390px;
-  width: 220px;
+  left: 425px;
+
   height: 60px;
 }
 
@@ -39,20 +42,30 @@
   font-size: 20px;
   position: absolute;
   top: 1px;
-  left: 60px;
+
 
 }
 
-.praise_me img{
+.little_header_container img {
   position: absolute;
-  height: 47px;
-  left: 5px;
-  top: 5px
+  height: 70px;
+  left: 40px;
+  top: 20px;
 }
+
+.little_header_container h1 {
+  position: absolute;
+  left: 120px;
+  top: 35px;
+  font-size: 35px;
+}
+
+
 
 h1 {
-
+  margin-top: 20px;
   margin: 0px;
+  font-size: 28px;
 }
 
 /* label {
@@ -73,6 +86,7 @@ button:hover {
 
 .praise_me:hover {
   background-color: #f30de3;
+  color: white;
 
 }
 .praise_me:clicked {
@@ -85,22 +99,17 @@ button p {
 
 button.praise_me p {
   font-size: 20px;
-  margin-left: 40px;
+  margin-left: 0px;
 }
 
-button.tweet {
-  background-color: blue;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  height: 44px;
-}
+
 
 p {
   font-size: 15px;
 }
 
 
-button.tweet:hover {
+button.send_tweet:hover {
   background-color: lightblue;
 }
 
@@ -113,6 +122,13 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 15px;
+}
+
+button.send_tweet {
+  background-color: blue;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  height: 44px;
 }
 
 
@@ -142,7 +158,7 @@ button {
 
 .tweet_mate {
   margin-top: 0;
-  margin-left: 40px;
+  margin-left: 20px;
   margin-right: 40px;
 }
 
@@ -154,7 +170,9 @@ h3  {
 }
 
 input.twitter_handle {
+  font-size: 1em;
   padding: 12px;
+  min-width: 240px;
   margin-left: 40px;
   margin-right: 10px;
   margin-bottom: 20px;
