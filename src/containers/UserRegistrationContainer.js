@@ -24,6 +24,7 @@ class UserRegistrationContainer extends Component {
     this.handlePassword = this.handlePassword.bind(this);
     this.handleTwitter = this.handleTwitter.bind(this);
     this.handlePhone = this.handlePhone.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
 
   }
 
@@ -61,6 +62,7 @@ class UserRegistrationContainer extends Component {
     }).map((option) => {
       return option.value
     });
+    checkboxPreferences.push("GENERAL");
     console.log("Checkbox",checkboxPreferences);
     this.setState({preferences: checkboxPreferences});
 
@@ -114,6 +116,11 @@ class UserRegistrationContainer extends Component {
     this.setState({phone: event.target.value})
   }
 
+  handleCancel(event){
+    event.preventDefault();
+    window.location = "/";
+  }
+
   render(){
 
     if (this.state.keywords.length === 0){
@@ -125,7 +132,10 @@ class UserRegistrationContainer extends Component {
     // })
 
     const prefOptionsCheckbox = this.state.keywords.map((keyword, index) => {
-      return <label className="checkbox-label" key={index}>{keyword}<input type="checkbox" className="checkbox" name="checkbox_pref" key={index} value={keyword} /></label>
+      if (keyword !== "GENERAL") {
+        return <label className="checkbox-label" key={index}>{keyword}<input type="checkbox" className="checkbox" name="checkbox_pref" key={index} value={keyword} /></label>
+      }
+      return null;
     })
 
     return (
@@ -136,22 +146,22 @@ class UserRegistrationContainer extends Component {
               <div className="first-name-last-name">
                 <legend className="reg-form-legend">Please fill in this form to let us get to know you better.</legend>
                 <label className="reg-form-label">First Name
-                  <input type="text" className="reg-form-input" id="firstName" placeholder="First Name" name="firstName" onChange={this.handleFirstName} value={this.state.firstName} />
+                  <input type="text" className="reg-form-input" id="firstName" placeholder="First Name" name="firstName" onChange={this.handleFirstName} value={this.state.firstName} required/>
                 </label>
                 <label className="reg-form-label">Last Name
-                  <input type="text" className="reg-form-input" id="lastName" placeholder="Last Name" name="lastName" onChange={this.handleLastName} value={this.state.lastName} />
+                  <input type="text" className="reg-form-input" id="lastName" placeholder="Last Name" name="lastName" onChange={this.handleLastName} value={this.state.lastName} required/>
                 </label>
               </div>
 
               <div className="email-div">
                 <label className="reg-form-label">Email/Login
-                  <input type="text" className="reg-form-input" id="email" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} />
+                  <input type="text" className="reg-form-input" id="email" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} required/>
                 </label>
               </div>
 
               <div className="password-div">
                 <label className="reg-form-label">Password
-                  <input type="password" className="reg-form-input" id="password" name="password" onChange={this.handlePassword} value={this.state.password}/>
+                  <input type="password" className="reg-form-input" id="password" name="password" onChange={this.handlePassword} value={this.state.password} required/>
                 </label>
               </div>
             </div>
@@ -175,6 +185,7 @@ class UserRegistrationContainer extends Component {
             <div>
             <button type="submit">Register</button>
             </div>
+            <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
           </form>
         </div>
       )
