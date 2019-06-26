@@ -50,13 +50,28 @@ label{
   height: 300px;
   margin-left: 20px;
   position: relative;
-  float: right;
+  left: 420px;
+  bottom: 220px;
+
 }
 
 #container{
-  position: absolute;
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction:row;
   align-items:center;
-  padding-left: 250px
+  margin: auto;
+  border: solid 8px black;
+  border-radius: 60px;
+  box-shadow: 10px 8px 8px #36454f;
+  max-width: 800px;
+  background-color: yellow;
+}
+
+#logform{
+  margin-left: 20px;
+  position: relative;
+  left: 10px;
+  bottom: 220px;
+  top: 110px;
 }
