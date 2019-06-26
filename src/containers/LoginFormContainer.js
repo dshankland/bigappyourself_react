@@ -69,38 +69,44 @@ class LoginFormContainer extends Component {
     }
 
     return (
-        <div id="login">
-        <p>Please login to be showered with praise</p>
+      <div id="login">
         <div id="container">
           <div className="loginForm">
+            <div id="logform">
             <form className="login" onSubmit={this.handleLogin}>
               <div>
-                <div>
-                  <label>Email</label>
-                </div>
+                  <div>
+                    <p>Please login to be showered with praise</p>
+                      <label>Email</label>
+                  </div>
                 <input type="text" className="login" placeholder="Enter email" name="email" onChange={this.handleEmail} value={this.state.email} />
               </div>
             <div>
-              <div>
-                <label>Password</label>
-              </div>
-                <input type="password" className="login" placeholder="Enter password" name="password" onChange={this.handlePassword} value={this.state.password}/>
-              </div>
+                <div>
+                  <label>Password</label>
+                </div>
+              <input type="password" className="login" placeholder="Enter password" name="password" onChange={this.handlePassword} value={this.state.password}/>
+            </div>
               <button type="submit">Login</button>
-            </form>
+              <button><a href="/register">Click here to register</a></button>
+              </form>
+              </div>
+              <div id="twitterFeed">
+                    <TwitterTimelineEmbed
+                    sourceType="profile"
+                    screenName="appSelf"
+                    options={{height: 400}}/>
+              </div>
+            </div>
+
+
         </div>
           {this.state.loginmessage}
-            <div>
-              <button><a href="/register">Click here to register</a></button>
-              </div>
-            <div id="twitterFeed">
-              <TwitterTimelineEmbed
-              sourceType="profile"
-              screenName="appSelf"
-              options={{height: 400}}/>
-            </div>
-          </div>
-        </div>
+
+
+      </div>
+
+
       )
   }
 }
