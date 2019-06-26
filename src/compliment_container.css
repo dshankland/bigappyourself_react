@@ -1,0 +1,181 @@
+/* body{
+ background:linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)),url('/favicon.ico') no-repeat center;
+ background-size: cover;
+
+} */
+
+.compliment_container {
+  position: relative;
+  top: 20px;
+  margin: auto;
+  background-color: yellow;
+  max-width: 650px;
+
+  border: solid 8px black;
+  border-radius: 60px;
+  box-shadow: 10px 8px 8px #36454f ;
+}
+.greeting {
+  position: relative;
+  left: 40px;
+  margin-left: 40px;
+  max-width: 200px;
+}
+
+.logout_container{
+  margin: 30px;
+  position: relative;
+  left: 490px;
+  top: 10px;
+  background-color: #4CAF5;
+}
+
+.praise_me {
+  align-right: content;
+  position: relative;
+  left: 425px;
+
+  height: 60px;
+}
+
+.praise_me h2 {
+  font-size: 20px;
+  position: absolute;
+  top: 1px;
+
+
+}
+
+.little_header_container img {
+  position: absolute;
+  height: 70px;
+  left: 40px;
+  top: 20px;
+}
+
+.little_header_container h1 {
+  position: absolute;
+  left: 120px;
+  top: 35px;
+  font-size: 35px;
+}
+
+
+
+h1 {
+  margin-top: 20px;
+  margin: 0px;
+  font-size: 28px;
+}
+
+/* label {
+  margin-left: 30px;
+  margin-right: 30px;
+} */
+
+/* h3.twitter {
+
+} */
+
+
+
+button:hover {
+  background-color: #15f30d;
+  color: black;
+}
+
+.praise_me:hover {
+  background-color: #f30de3;
+  color: white;
+
+}
+.praise_me:clicked {
+  background-color: #f68204;
+}
+
+button p {
+  margin: 0;
+}
+
+button.praise_me p {
+  font-size: 20px;
+  margin-left: 0px;
+}
+
+
+
+p {
+  font-size: 15px;
+}
+
+
+button.send_tweet:hover {
+  background-color: lightblue;
+}
+
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: solid 1px #000;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button.send_tweet {
+  background-color: blue;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  height: 44px;
+}
+
+
+.compliment {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border: 4px solid black;
+  min-height: 170px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.compliment h2 {
+  font-size: 40px;
+}
+
+/* form.tweet_mate {
+  max-height: 100px;
+  margin-top: 0;
+  margin-left: 40px;
+  margin-right: 40px;
+} */
+
+.tweet_mate {
+  margin-top: 0;
+  margin-left: 20px;
+  margin-right: 40px;
+}
+
+h3  {
+  font-size: 18px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 10px;
+}
+
+input.twitter_handle {
+  font-size: 1em;
+  padding: 12px;
+  min-width: 240px;
+  margin-left: 40px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Request from '../helpers/request';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
+// TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton
+import '../Login.css'
 
 class LoginFormContainer extends Component {
   constructor(props){
@@ -49,7 +51,7 @@ class LoginFormContainer extends Component {
       window.location = "/compliment";
     } else {
       // console.log("Bad user or password");
-      this.setState({loginmessage: "Bad user or password, please try again, or register.."})
+      this.setState({loginmessage: "Incorrect details. Please try again or register"})
     }
   }
 
@@ -67,17 +69,46 @@ class LoginFormContainer extends Component {
     }
 
     return (
-        <div>
-        <p>Please login to be showered with compliments</p>
-        <form onSubmit={this.handleLogin}>
-          <input type="text" placeholder="Email" name="email" onChange={this.handleEmail} value={this.state.email} />
-          <input type="password" name="password" onChange={this.handlePassword} value={this.state.password}/>
-          <button type="submit">Login</button>
-        </form>
-        {this.state.loginmessage}
-        <hr/>
-        <a href="/register">Click here to register</a>
+      <div id="login">
+        <div id="container">
+          <div className="loginForm">
+            <div id="logform">
+            <form className="login" onSubmit={this.handleLogin}>
+              <div>
+                  <div>
+                    <p>Please login to be showered with praise</p>
+                      <label>Email</label>
+                  </div>
+                <input type="text" className="login" placeholder="Enter email" name="email" onChange={this.handleEmail} value={this.state.email} />
+              </div>
+            <div>
+                <div>
+                  <label>Password</label>
+                </div>
+              <input type="password" className="login" placeholder="Enter password" name="password" onChange={this.handlePassword} value={this.state.password}/>
+            </div>
+              <button type="submit">Login</button>
+              <button><a href="/register">Click here to register</a></button>
+              </form>
+              <div className="login-message">
+              {this.state.loginmessage}
+              </div>
+              </div>
+              <div id="twitterFeed">
+                    <TwitterTimelineEmbed
+                    sourceType="profile"
+                    screenName="appSelf"
+                    options={{height: 400}}/>
+              </div>
+            </div>
+
+
         </div>
+
+
+      </div>
+
+
       )
   }
 }

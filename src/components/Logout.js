@@ -1,4 +1,5 @@
 import React from 'react';
+import '../compliment_container.css'
 
 const Logout = (props) => {
 
@@ -10,7 +11,7 @@ const Logout = (props) => {
 
   return (
     <div>
-      <button onClick={handleLogout}>Logout</button>
+      <button className="logout" onClick={handleLogout}><p>Logout</p></button>
     </div>
   )
 

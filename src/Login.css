@@ -1,0 +1,85 @@
+form.login {
+  padding: 1em;
+}
+
+input.login {
+  width:300px;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.loginForm{
+  align-content: right;
+  float: right;
+}
+
+h1.login {
+  font-size: 100px;
+  text-align: center;
+}
+
+#login{
+  text-align:center;
+}
+
+h2.login {
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  /* border: solid 1px #000; */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+label{
+  font-size: 20px;
+}
+
+.login-message{
+  /* padding-top: 100px; */
+  /* margin-top: 390px; */
+  /* left: 100px; */
+  float: left;
+}
+
+#twitterFeed{
+  width: 300px;
+  height: 300px;
+  margin-left: 20px;
+  position: relative;
+  left: 420px;
+  bottom: 220px;
+
+}
+
+#container{
+  position: relative;
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  margin: auto;
+  border: solid 8px black;
+  border-radius: 60px;
+  box-shadow: 10px 8px 8px #36454f;
+  max-width: 800px;
+  background-color: yellow;
+}
+
+#logform{
+  margin-left: 20px;
+  position: relative;
+  left: 10px;
+  bottom: 220px;
+  top: 110px;
+}

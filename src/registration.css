@@ -1,0 +1,102 @@
+/* Style inputs, select elements and textareas */
+input.reg-form-input[type=text], input.reg-form-input[type=password], select, textarea.reg-form-input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 1em;
+}
+
+/* Style the label to display next to the inputs */
+label.reg-form-label, label.checkbox-grid {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+button[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  /* border: solid 1px #000; */
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  font-size: 1em;
+}
+
+.side-byside-bit {
+}
+
+.user-details-form {
+  float: left;
+  overflow: hidden;
+}
+
+.logo-div {
+  float: right;
+  display: center;
+}
+
+.reg-form-legend {
+  clear: both;
+}
+
+.checkbox-grid {
+  display: flex;
+  /* grid-template-areas: "left right"; */
+  /* width: 400px; */
+  display:inline;
+  align-items: center;
+  min-width:640px;
+  min-height: 120px;
+  padding: 10px;
+}
+
+.checkbox-grid ul, .checkbox-grid li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+input[type=checkbox].checkbox {
+  grid-area: right;
+  margin: 6px;
+}
+
+label.checkbox-label {
+  margin: 10px;
+  padding: 0 0 0 0;
+  display: inline-block;
+  font-size: 1.2em;
+}
+
+.reg-form-legend {
+  font-size: 1.5em;
+}
+
+.user-details-form-div {
+  padding: 14px;
+  position: relative;
+  top: 20px;
+  margin: auto;
+  background-color: white;
+  max-width: 640px;
+  min-height: 690px;
+  border: solid 8px black;
+  border-radius: 60px;
+}
+
+button.cancel-button {
+  float: right;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
