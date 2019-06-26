@@ -40,7 +40,6 @@ class ComplimentContainer extends Component {
 
   handleTweetYourFriend(event){
 
-    event.preventDefault();
     const request = new Request();
     if(this.state.friendsTwitter !== ""){
     request.get('/users/tweet/'+ this.state.friendsTwitter)
