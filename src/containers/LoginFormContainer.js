@@ -51,7 +51,7 @@ class LoginFormContainer extends Component {
       window.location = "/compliment";
     } else {
       // console.log("Bad user or password");
-      this.setState({loginmessage: "Bad user or password, please try again, or register.."})
+      this.setState({loginmessage: "Incorrect details. Please try again or register"})
     }
   }
 
@@ -90,6 +90,9 @@ class LoginFormContainer extends Component {
               <button type="submit">Login</button>
               <button><a href="/register">Click here to register</a></button>
               </form>
+              <div className="login-message">
+              {this.state.loginmessage}
+              </div>
               </div>
               <div id="twitterFeed">
                     <TwitterTimelineEmbed
@@ -101,7 +104,6 @@ class LoginFormContainer extends Component {
 
 
         </div>
-          {this.state.loginmessage}
 
 
       </div>
